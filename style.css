@@ -1,0 +1,134 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #e0f2fe, #dbeafe);
+  margin: 0;
+  padding: 40px 20px;
+  color: #0f172a;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 60px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding-left: 40px;
+  border-left: 4px solid;
+  border-image: linear-gradient(to bottom, #3b82f6, #1e40af) 1;
+}
+
+.timeline-side-by-side {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* Stack on smaller screens */
+}
+
+.timeline-img-left {
+  width: 200px;              /* Set desired width */
+  height: 150px;             /* Set desired height */
+  object-fit: cover;         /* Crop to fill without stretching */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+
+.timeline-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+
+
+
+.timeline-item {
+  margin-bottom: 80px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+  
+
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+
+.timeline-dot {
+  position: absolute;
+  top: 0;
+  left: -14px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(to bottom, #3b82f6, #1e40af);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #e0f2fe;
+}
+
+.timeline-content {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid #1d4ed8;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
+}
+
+.timeline-content h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #1e3a8a;
+}
+
+.timeline-content p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+  color: #334155;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-content {
+    padding: 16px 20px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}
